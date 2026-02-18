@@ -7,7 +7,7 @@ nombre y una lista de departamentos.
 2º Prompt:
 Ahora crea una clase "Factoria" con un método para leer el archivo 'departamentos.pdf' y construir el objeto Universidad. Emplea la 
 librería de Python que funcione mejor para extraer texto de PDFs. Ten en cuenta que el PDF está bastante sucio: ignora cabeceras y pies
- de página, y extrae solo las líneas que correspondan a los departamentos (empiezan por 'DEPARTAMENTO DE'). Añade un print o control que 
+ de página, y extrae solo las líneas que correspondan a los departamentos (empiezan por 'DEPARTAMENTO DE'). Añade un print que 
  me avise si el código no logra extraer exactamente 134 filas.
 
 3º Prompt:
