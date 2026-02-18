@@ -11,12 +11,9 @@ class Factoria:
         contador_deptos = 0
         
         # 2. Preparamos el patrón para identificar líneas válidas.
-        # Busca "DEPARTAMENTO DE " seguido de texto, y luego captura 5 bloques de números.
         patron = re.compile(r"^(DEPARTAMENTO DE .*?)\s+([\d\.,]+)\s+([\d\.,]+)\s+([\d\.,]+)\s+([\d\.,]+)\s+([\d\.,]+)$")
 
-        # Función auxiliar para convertir texto tipo "1.479,36" a float de Python (1479.36)
         def parsear_numero(cadena):
-            # Quitamos el punto de los miles y cambiamos la coma decimal por un punto
             cadena_limpia = cadena.replace('.', '').replace(',', '.')
             return float(cadena_limpia)
 
@@ -29,11 +26,9 @@ class Factoria:
                     if not texto:
                         continue
                     
-                    # Leemos línea a línea
                     for linea in texto.split('\n'):
                         linea = linea.strip()
                         
-                        # Filtramos solo las líneas que nos interesan
                         if linea.startswith("DEPARTAMENTO DE"):
                             match = patron.match(linea)
                             if match:
@@ -45,7 +40,6 @@ class Factoria:
                                 # porque nuestro objeto 'Departamento' ya lo calcula internamente.
                                 experimentalidad = parsear_numero(match.group(6))
                                 
-                                # Instanciamos y añadimos a la universidad
                                 nuevo_depto = Departamento(nombre, etc, prof_tc, prof_tp, experimentalidad)
                                 uni.departamentos.append(nuevo_depto)
                                 contador_deptos += 1
